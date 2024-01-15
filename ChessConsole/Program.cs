@@ -7,7 +7,7 @@ namespace ChessConsole
         static ChessGame game;
         static void Main(string[] args)
         {
-            TestTester();
+            //TestTester();
 
             Console.CursorVisible = false;
             ConsoleGraphics graphics = new ConsoleGraphics();
@@ -35,36 +35,36 @@ namespace ChessConsole
             Console.Read();
         }
 
-        static void TestTester()
-        {
-            bool success = true;
-            for (int tests = 0; tests < 100; tests++)
-            {
-                ChessBoard chessBoard = new ChessBoard();
-                chessBoard.Reset(false);
+        //static void TestTester()
+        //{
+        //    bool success = true;
+        //    for (int tests = 0; tests < 100; tests++)
+        //    {
+        //        ChessBoard chessBoard = new ChessBoard();
+        //        chessBoard.Reset(false);
 
-                bool foundFirstRook = false;
-                bool foundKing = false;
-                bool foundSecondRook = false;
+        //        bool foundFirstRook = false;
+        //        bool foundKing = false;
+        //        bool foundSecondRook = false;
 
-                string output = "Test " + tests + ": ";
-                for (int i = 0; i < 8; i++)
-                {
-                    var tempPiece = chessBoard.GetCell(i, 7).Piece.Char;
-                    output += tempPiece;
+        //        string output = "Test " + tests + ": ";
+        //        for (int i = 0; i < 8; i++)
+        //        {
+        //            var tempPiece = chessBoard.GetCell(i, 7).Piece.Char;
+        //            output += tempPiece;
 
-                    if (tempPiece == 'R' && !foundFirstRook) { foundFirstRook = true; }
-                    else if (tempPiece == 'R') { foundSecondRook = true; }
+        //            if (tempPiece == 'R' && !foundFirstRook) { foundFirstRook = true; }
+        //            else if (tempPiece == 'R') { foundSecondRook = true; }
 
-                    if (tempPiece == 'K') { foundKing = true; }
+        //            if (tempPiece == 'K') { foundKing = true; }
 
-                    if (tempPiece == 'K' && !foundFirstRook) success = false;
-                    else if (tempPiece == 'K' && foundFirstRook && foundSecondRook) success = false;
-                }
-                if (!foundFirstRook || !foundSecondRook || !foundKing) { success = false; }
-                output += "\t Success: " + success;
-                Console.WriteLine(output);
-            }
-        }
+        //            if (tempPiece == 'K' && !foundFirstRook) success = false;
+        //            else if (tempPiece == 'K' && foundFirstRook && foundSecondRook) success = false;
+        //        }
+        //        if (!foundFirstRook || !foundSecondRook || !foundKing) { success = false; }
+        //        output += "\t Success: " + success;
+        //        Console.WriteLine(output);
+        //    }
+        //}
     }
 }
